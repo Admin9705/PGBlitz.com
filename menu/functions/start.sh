@@ -23,7 +23,7 @@ fi
 
 downloadpg() {
   rm -rf /opt/plexguide
-  git clone https://github.com/Admin9705/PlexGuide.com-The-Awesome-Plex-Server.git /opt/plexguide && cp /opt/plexguide/menu/interface/alias/templates/plexguide /bin/
+  git clone https://github.com/PGBlitz/PGBlitz.com.git /opt/plexguide && cp /opt/plexguide/menu/interface/alias/templates/plexguide /bin/
   cp /opt/plexguide/menu/interface/alias/templates/plexguide /bin/plexguide
 }
 
@@ -61,10 +61,10 @@ exitcheck() {
 bash /opt/plexguide/menu/version/file.sh
 file="/var/plexguide/exited.upgrade"
 if [ ! -e "$file" ]; then
-	bash /opt/plexguide/menu/ending/ending.sh
+	bash /opt/plexguide/menu/interface/ending.sh
 else
 	rm -rf /var/plexguide/exited.upgrade 1>/dev/null 2>&1
 	echo ""
-	bash /opt/plexguide/menu/ending/ending.sh
+	bash /opt/plexguide/menu/interface/ending.sh
 fi
 }
