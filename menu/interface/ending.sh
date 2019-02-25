@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705 - FlickerRate
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 source /opt/plexguide/menu/functions/install.sh
@@ -32,7 +32,7 @@ cat << "EOF"
 │ View the PG Blitz Logs:   blitz     │
 │ Download Your PG Fork:    pgfork    │
 │ ————————————————————————————————————│
-│ Thanks For Being Part of the Team!  │
+│ Thanks For Being Part of the Team   │
 └─────────────────────────────────────┘
 
 EOF
