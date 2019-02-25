@@ -24,14 +24,14 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📂  PG Update Interface
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Prior Versions? Visit > versions.pgblitz.com
 
 Lastest:  : $latest
 Beta      : $beta
 Installed : $pgnumber
 
-💬  Prior Versions?  Visit > versions.pgblitz.com
-    Quitting? TYPE > exit
-
+Quitting? TYPE > exit
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
 break=no
@@ -42,9 +42,8 @@ parttwo
 }
 
 parttwo() {
-if [ "$typed" == "exit" ]; then
-  echo ""; touch /var/plexguide/exited.upgrade; exit
-fi
+if [[ "$typed" == "exit" || "$typed" == "EXIT" || "$typed" == "Exit" ]]; then
+  echo ""; touch /var/plexguide/exited.upgrade; exit; fi
 
 if [ "$storage" != "" ]; then
   break=yes
@@ -76,7 +75,7 @@ EOF
 fi
 }
 
-rm -r /opt/pgstage
+rm -rf /opt/pgstage
 mkdir -p /opt/pgstage
 ansible-playbook /opt/plexguide/menu/pgstage/pgstage.yml #&>/de v/null &
 mainstart
