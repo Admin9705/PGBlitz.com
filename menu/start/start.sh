@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 file="/var/plexguide/pg.number"
@@ -82,10 +82,10 @@ case $typed in
         bash /opt/pgclone/gdrive.sh
         primestart ;;
     z )
-        bash /opt/plexguide/menu/ending/ending.sh
+        bash /opt/plexguide/menu/interface/ending.sh
         exit ;;
     Z )
-        bash /opt/plexguide/menu/ending/ending.sh
+        bash /opt/plexguide/menu/interface/ending.sh
         exit ;;
     * )
         forcepgclone ;;
@@ -121,6 +121,7 @@ varstart() {
   variable /var/plexguide/tld.type "standard"
   variable /var/plexguide/transcode.path "standard"
   variable /var/plexguide/pgclone.transport "NOT-SET"
+  variable /var/plexguide/plex.claim ""
 
   #### Temp Fix - Fixes Bugged AppGuard
   serverht=$(cat /var/plexguide/server.ht)
@@ -264,28 +265,24 @@ read -p '↘️  Type Number | Press [ENTER]: ' typed < /dev/tty
 case $typed in
     1 )
       bash /opt/plexguide/menu/pgcloner/traefik.sh
-      bash /opt/traefik/traefik.sh
       primestart ;;
     2 )
       bash /opt/plexguide/menu/portguard/portguard.sh
       primestart ;;
     3 )
-      bash /opt/plexguide/menu/pgshield/pgshield.sh
+      bash /opt/plexguide/menu/pgcloner/pgshield.sh
       primestart ;;
     4 )
       bash /opt/plexguide/menu/pgcloner/pgclone.sh
-      bash /opt/pgclone/gdrive.sh
       primestart ;;
     5 )
       bash /opt/plexguide/menu/pgbox/pgboxselect.sh
       primestart ;;
     6 )
       bash /opt/plexguide/menu/pgcloner/pgpress.sh
-      bash /opt/pgpress/pressmain.sh
       primestart ;;
     7 )
       bash /opt/plexguide/menu/pgcloner/pgvault.sh
-      bash /opt/pgvault/pgvault.sh
       primestart ;;
     8 )
       bash /opt/plexguide/menu/interface/cloudselect.sh
@@ -294,13 +291,13 @@ case $typed in
       bash /opt/plexguide/menu/tools/tools.sh
       primestart ;;
     10 )
-      bash /opt/plexguide/menu/settings/settings.sh
+      bash /opt/plexguide/menu/interface/settings.sh
       primestart ;;
     z )
-      bash /opt/plexguide/menu/ending/ending.sh
+      bash /opt/plexguide/menu/interface/ending.sh
       exit ;;
     Z )
-      bash /opt/plexguide/menu/ending/ending.sh
+      bash /opt/plexguide/menu/interface/ending.sh
       exit ;;
     * )
       primestart ;;

@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -46,12 +46,14 @@ question2 () {
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌎 PG - PlexGuide Installer
+🌎 PG - PlexGuide Installer ~ http://plex.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚡ Reference: http://plex.plexguide.com
+NOTE: DO NOT SELECT LOCAL SYSTEM for a REMOTE SERVER outside of your
+network as in using Hetzner, Google GCE, WholeSale Internet & Etc! If you
+do you, it will not work and you will have to uninstall it!
 
-1 - Plex Server > Remote (Outside Network)
-2 - Plex Server > Local  (Within  Network)
+1 - Plex Remote System ~ OUTSIDE your LOCAL NETWORK (i.e 3rd Party)
+2 - Plex Local System  ~ INSIDE  your LOCAL NETWORK (i.e Home)
 Z - EXIT
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

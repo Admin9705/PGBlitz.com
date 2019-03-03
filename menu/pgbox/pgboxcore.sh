@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -119,7 +119,7 @@ if [ "$buildup" == "" ]; then buildup="NONE"; fi
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 PGBox ~ Multi-App Installer           📓 Reference: pgbox.plexguide.com
+🚀 PGBox ~ Multi-App Installer           📓 Reference: pgbox.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📂 Potential Apps to Install
@@ -219,7 +219,7 @@ if [[ "$edition" == "PG Edition - HD Solo" ]]; then a=b
 else if [ "$croncount" -eq "1" ]; then cronexe; fi; fi
 
 # End Banner
-bash /opt/plexguide/menu/endbanner/endbanner.sh >> /tmp/output.info
+bash /opt/plexguide/menu/pgbox/endbanner.sh >> /tmp/output.info
 
 sleep 2
 done </var/plexguide/pgbox.buildup
@@ -236,7 +236,7 @@ boxbranch=$(cat /var/plexguide/boxcore.branch)
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 PG Core Box Edition!                   📓 Reference: core.plexguide.com
+🚀 PG Core Box Edition!                   📓 Reference: core.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 User: $boxuser | Branch: $boxbranch
@@ -289,7 +289,7 @@ mainbanner () {
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 PG Core Box Edition!                   📓 Reference: core.plexguide.com
+🚀 PG Core Box Edition!                   📓 Reference: core.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 Core Box apps simplify their usage within PlexGuide! PG provides more

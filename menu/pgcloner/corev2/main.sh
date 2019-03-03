@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -13,6 +13,7 @@ rolename=$(cat /var/plexguide/pgcloner.rolename)
 roleproper=$(cat /var/plexguide/pgcloner.roleproper)
 projectname=$(cat /var/plexguide/pgcloner.projectname)
 projectversion=$(cat /var/plexguide/pgcloner.projectversion)
+startlink=$(cat /var/plexguide/pgcloner.startlink)
 
 mkdir -p "/opt/$rolename"
 
@@ -26,6 +27,7 @@ initial () {
   	sleep .5
   	if [ -e "$file" ]; then waitvar=1; fi
   done
+  bash /opt/${rolename}/${startlink}
 }
 
 custom () {
@@ -40,6 +42,7 @@ custom () {
   	sleep .5
   	if [ -e "$file" ]; then waitvar=1; fi
   done
+  bash /opt/${rolename}/${startlink}
 }
 
 mainbanner () {
@@ -47,7 +50,7 @@ clonerinfo=$(cat /var/plexguide/pgcloner.info)
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 $roleproper | 📓 Reference: $rolename.plexguide.com
+🚀 $roleproper | 📓 Reference: $rolename.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 $clonerinfo
@@ -85,7 +88,7 @@ branch=$(cat /var/plexguide/$rolename.branch)
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 $roleproper | 📓 Reference: $rolename.plexguide.com
+🚀 $roleproper | 📓 Reference: $rolename.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬 User: $user | Branch: $branch

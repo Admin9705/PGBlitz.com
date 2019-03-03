@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -162,7 +162,7 @@ tee <<-EOF
 EOF
 sleep 2
 
-ansible-playbook /opt/plexguide/menu/folders/main.yml
+ansible-playbook /opt/plexguide/menu/installer/main.yml
 bash /opt/plexguide/menu/dlpath/rebuild.sh
 
 tee <<-EOF

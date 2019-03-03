@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 ---
@@ -68,7 +68,7 @@
 - name: Install docker-ce
   apt:
     name: docker-ce
-    state: present
+    state: latest
     update_cache: yes
   when: switch == "on"
 
@@ -139,7 +139,7 @@
   file: 
     path: /etc/systemd/system/docker.service.d 
     state: directory 
-    mode: 0775"
+    mode: 0775
   when:
     - docker_override.stat.exists == False
     - switch == "on"

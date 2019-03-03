@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 ---
@@ -23,7 +23,7 @@
 - name: "Switch - On"
   set_fact:
     switch: "off"
-  when: updatecheck.stdout == "18.06.0-ce,"
+  when: updatecheck.stdout == "18.09.2,"
 
 - name: Install required packages
   apt: "name={{item}} state=present"
@@ -148,7 +148,7 @@
     src: override.conf
     dest: /etc/systemd/system/docker.service.d/override.conf 
     force: yes
-    mode: 0775"
+    mode: 0775
   tags: docker_standard
   when: switch == "on"
 

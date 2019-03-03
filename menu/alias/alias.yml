@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 ---
@@ -45,6 +45,14 @@
       template:
         src: plexguide
         dest: /bin/plexguide
+        force: yes
+        mode: 0775
+        owner: root
+
+    - name: PGBlitz
+      template:
+        src: pgblitz
+        dest: /bin/pgblitz
         force: yes
         mode: 0775
         owner: root

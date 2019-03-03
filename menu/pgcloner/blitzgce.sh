@@ -2,15 +2,16 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 
 ### FILL OUT THIS AREA ###
-echo 'blitzegce' > /var/plexguide/pgcloner.rolename
+echo 'blitzgce' > /var/plexguide/pgcloner.rolename
 echo 'BlitzGCE' > /var/plexguide/pgcloner.roleproper
 echo 'BlitzGCE' > /var/plexguide/pgcloner.projectname
 echo 'v8.5' > /var/plexguide/pgcloner.projectversion
+echo 'blitzgce.sh' > /var/plexguide/pgcloner.startlink
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 echo "💬 Blitz GCE scripts are setup so that users can deploy any
@@ -19,4 +20,4 @@ three months!" > /var/plexguide/pgcloner.info
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ### START PROCESS
-bash /opt/plexguide/menu/pgcloner/core/main.sh
+bash /opt/plexguide/menu/pgcloner/corev2/main.sh

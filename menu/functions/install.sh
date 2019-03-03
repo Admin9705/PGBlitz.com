@@ -2,7 +2,7 @@
 #
 # Title:      PlexGuide (Reference Title File)
 # Author(s):  Admin9705
-# URL:        https://plexguide.com - http://github.plexguide.com
+# URL:        https://plexguide.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 source /opt/plexguide/menu/functions/functions.sh
@@ -45,13 +45,13 @@ updateprime() {
   echo "11" > ${abc}/pg.aptupdate
   echo "150" > ${abc}/pg.preinstall
   echo "22" > ${abc}/pg.folders
-  echo "13" > ${abc}/pg.dockerinstall
+  echo "15" > ${abc}/pg.dockerinstall
   echo "15" > ${abc}/pg.server
   echo "1" > ${abc}/pg.serverid
-  echo "30" > ${abc}/pg.dependency
+  echo "32" > ${abc}/pg.dependency
   echo "11" > ${abc}/pg.docstart
   echo "2" > ${abc}/pg.motd
-  echo "108" > ${abc}/pg.alias
+  echo "112" > ${abc}/pg.alias
   echo "3" > ${abc}/pg.dep
   echo "2" > ${abc}/pg.cleaner
   echo "3" > ${abc}/pg.gcloud
@@ -77,9 +77,20 @@ pginstall () {
   core dockerinstall
   core docstart
 
+
+touch /var/plexguide/install.roles
+rolenumber=3
   # Roles Ensure that PG Replicates and has once if missing; important for startup, cron and etc
+if [[ $(cat /var/plexguide/install.roles) != "$rolenumber" ]]; then
+  rm -rf /opt/communityapps
+  rm -rf /opt/coreapps
+  rm -rf /opt/pgshield
+
   pgcore
   pgcommunity
+  pgshield
+  echo "$rolenumber" > /var/plexguide/install.roles
+fi
 
   portainer
   pgui
@@ -145,14 +156,18 @@ docstart () {
 }
 
 emergency() {
-
+  variable /var/plexguide/emergency.display "On"
 if [[ $(ls /opt/appdata/plexguide/emergency) != "" ]]; then
+
+# If not on, do not display emergency logs
+if [[ $(cat /var/plexguide/emergency.display) == "On" ]]; then
 
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔️  Emergency & Warning Log Generator | Visit - http://emlog.plexguide.com
+⛔️  Emergency & Warning Log Generator | Visit - http://emlog.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NOTE: This can be turned [On] or Off in Settings!
 
 EOF
 
@@ -167,12 +182,12 @@ EOF
   echo
 else
   touch /var/plexguide/emergency.log
-fi
+fi; fi
 
 }
 
 folders () {
-  ansible-playbook /opt/plexguide/menu/folders/main.yml
+  ansible-playbook /opt/plexguide/menu/installer/folders.yml
 }
 
 prune () {
@@ -304,6 +319,13 @@ portainer () {
 # Roles Ensure that PG Replicates and has once if missing; important for startup, cron and etc
 pgcore() { if [ ! -e "/opt/coreapps/place.holder" ]; then ansible-playbook /opt/plexguide/menu/pgbox/pgboxcore.yml; fi }
 pgcommunity() { if [ ! -e "/opt/communityapps/place.holder" ]; then ansible-playbook /opt/plexguide/menu/pgbox/pgboxcommunity.yml; fi }
+pgshield() { if [ ! -e "/opt/pgshield/place.holder" ]; then
+echo 'pgshield' > /var/plexguide/pgcloner.rolename
+echo 'PGShield' > /var/plexguide/pgcloner.roleproper
+echo 'PGShield' > /var/plexguide/pgcloner.projectname
+echo 'v8.5.6' > /var/plexguide/pgcloner.projectversion
+echo 'pgshield.sh' > /var/plexguide/pgcloner.startlink
+ansible-playbook "/opt/plexguide/menu/pgcloner/corev2/primary.yml"; fi }
 
 pgui ()
 {
@@ -438,7 +460,7 @@ watchtower () {
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📂  PG WatchTower Edition          📓 Reference: watchtower.plexguide.com
+📂  PG WatchTower Edition          📓 Reference: watchtower.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬  WatchTower updates your containers soon as possible!
