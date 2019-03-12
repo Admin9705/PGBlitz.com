@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Title:      PlexGuide (Reference Title File)
+# Title:      PGBlitz (Reference Title File)
 # Author(s):  Admin9705 - Deiteq
-# URL:        https://plexguide.com - http://github.pgblitz.com
+# URL:        https://pgblitz.com - http://github.pgblitz.com
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -46,7 +46,7 @@ question2 () {
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🌎 PG - PlexGuide Installer ~ http://plex.pgblitz.com
+🌎 PG - PGBlitz Installer ~ http://plex.pgblitz.com
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 NOTE: DO NOT SELECT LOCAL SYSTEM for a REMOTE SERVER outside of your
 network as in using Hetzner, Google GCE, WholeSale Internet & Etc! If you
@@ -76,6 +76,9 @@ tee <<-EOF
 
 To Claim the Plex Server, visit https://www.plex.tv/claim/ and input the
 code below! You have 5 minutes to do so!
+
+If you are reinstalling plex with existing appdata press enter to skip 
+this step as you won't need to claim it again.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 
