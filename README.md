@@ -1,3 +1,5 @@
+## NOTE: THIS IS THE OLDER VERSION - Visit https://github.com/PGBlitz/PGBlitz.com
+
 <p align="center">
   <a href="https://pgblitz.com/forums" target="_blank"><img src="https://pgblitz.com/wikipics/logo-forums.png" width="160"/>   
   <a href="https://github.com/PGBlitz/PGBlitz.com/wiki" target="_blank"><img src="https://pgblitz.com/wikipics/logo-wiki.png" width="160"/>
